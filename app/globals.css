@@ -1,0 +1,187 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 24 96% 39%; /* Marrón cálido para tema de caballos */
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 24 96% 96%; /* Acento cálido suave */
+    --accent-foreground: 24 96% 39%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 24 96% 39%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 24 70% 45%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 24 70% 15%;
+    --accent-foreground: 24 70% 45%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 24 70% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Animaciones y efectos visuales */
+@layer components {
+  /* Efecto de hover para tarjetas */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  /* Animación para el botón de cafecito */
+  .cafecito-button {
+    @apply relative overflow-hidden;
+  }
+
+  .cafecito-button::after {
+    content: "";
+    @apply absolute inset-0 bg-gradient-to-r from-amber-200 to-amber-100 opacity-0 transition-opacity duration-300;
+  }
+
+  .cafecito-button:hover::after {
+    @apply opacity-20;
+  }
+
+  /* Animación para el botón de reproducción de música */
+  .music-button-pulse {
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(193, 132, 60, 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(193, 132, 60, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(193, 132, 60, 0);
+    }
+  }
+
+  /* Fondo decorativo con patrón sutil */
+  .bg-pattern {
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c1843c' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Efecto de desplazamiento suave */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Efecto de transición para navegación */
+  .nav-link {
+    @apply relative;
+  }
+
+  .nav-link::after {
+    content: "";
+    @apply absolute left-0 bottom-0 w-0 h-0.5 bg-primary transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  /* Efecto de brillo para trofeos y elementos destacados */
+  .trophy-shine {
+    @apply relative overflow-hidden;
+  }
+
+  .trophy-shine::before {
+    content: "";
+    @apply absolute -inset-y-1/2 -inset-x-full bg-gradient-to-r from-transparent via-white to-transparent opacity-30;
+    animation: shine 2s infinite;
+  }
+
+  @keyframes shine {
+    100% {
+      transform: translateX(200%);
+    }
+  }
+
+  /* Efecto de desvanecimiento para cargar contenido */
+  .fade-in {
+    animation: fadeIn 0.5s ease-in;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Efecto de escala para botones */
+  .scale-on-hover {
+    @apply transition-transform duration-200;
+  }
+
+  .scale-on-hover:hover {
+    @apply transform scale-105;
+  }
+
+  /* Efecto de sombra para elementos destacados */
+  .highlight-shadow {
+    @apply transition-shadow duration-300;
+  }
+
+  .highlight-shadow:hover {
+    box-shadow: 0 0 15px rgba(193, 132, 60, 0.3);
+  }
+}
+
+/* Mejoras para dispositivos móviles */
+@media (max-width: 640px) {
+  .container {
+    @apply px-4;
+  }
+}
+
+/* Mejoras para la accesibilidad */
+@layer utilities {
+  .focus-visible-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2;
+  }
+}
