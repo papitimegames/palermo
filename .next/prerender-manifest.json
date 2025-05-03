@@ -73,30 +73,6 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/san-isidro": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/san-isidro",
-      "dataRoute": "/san-isidro.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
     "/predicciones": {
       "experimentalBypassFor": [
         {
@@ -120,13 +96,37 @@
         "x-next-revalidated-tags",
         "x-next-revalidate-tag-token"
       ]
+    },
+    "/san-isidro": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/san-isidro",
+      "dataRoute": "/san-isidro.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
     }
   },
   "dynamicRoutes": {},
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "b5152cfee09a9f3277d01f0f608338c9",
-    "previewModeSigningKey": "5a5e4dc3947e2f4365eee14b57076842a5ab685608a576a17dc0e5bed8846e74",
-    "previewModeEncryptionKey": "f909b61386865cd88178721ebc4e377f9dc31e3c396a5660aa8038dc271b4554"
+    "previewModeId": "b105106f9aba50d38f8c8259394f71e0",
+    "previewModeSigningKey": "f0a3258d1d7e8a22c1db0e6e91a0cb86087caa6e2dac7db903c4390a3c3a0a19",
+    "previewModeEncryptionKey": "31c5d3384b9ff55592fe8e53cba669ce57eea81ab89c1060f649b254ccbebd00"
   }
 }

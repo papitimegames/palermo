@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -12,12 +12,44 @@ import { TrophyIcon, CalculatorIcon } from "lucide-react"
 import CafecitoButton from "@/components/cafecito-button"
 import Image from "next/image"
 
+// Simular actualización semanal de pronósticos
+const updateWeeklyPredictions = () => {
+  console.log("Actualizando pronósticos...");
+  // Aquí puedes agregar lógica para obtener datos de una API o actualizar el estado
+};
+
+// Calcular el tiempo hasta el próximo miércoles
+const getTimeUntilNextWednesday = () => {
+  const now = new Date();
+  const dayOfWeek = now.getDay(); // 0 = domingo, 1 = lunes, ..., 6 = sábado
+  const daysUntilWednesday = (3 - dayOfWeek + 7) % 7 || 7; // 3 = miércoles
+  const nextWednesday = new Date(now);
+  nextWednesday.setDate(now.getDate() + daysUntilWednesday);
+  nextWednesday.setHours(0, 0, 0, 0); // Medianoche del miércoles
+  return nextWednesday.getTime() - now.getTime();
+};
+
 export default function PredictionPage() {
   const [track, setTrack] = useState("palermo")
   const [raceDate, setRaceDate] = useState("")
   const [raceNumber, setRaceNumber] = useState("")
   const [isCalculating, setIsCalculating] = useState(false)
   const [predictions, setPredictions] = useState<any[]>([])
+
+  useEffect(() => {
+    const timeUntilNextWednesday = getTimeUntilNextWednesday();
+
+    const timeout = setTimeout(() => {
+      updateWeeklyPredictions();
+
+      // Configurar intervalo semanal después del primer miércoles
+      setInterval(() => {
+        updateWeeklyPredictions();
+      }, 7 * 24 * 60 * 60 * 1000); // Una semana en milisegundos
+    }, timeUntilNextWednesday);
+
+    return () => clearTimeout(timeout);
+  }, []);
 
   // Función para simular el cálculo de predicciones
   const calculatePredictions = () => {
