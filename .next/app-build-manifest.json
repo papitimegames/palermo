@@ -3,14 +3,14 @@
     "/_not-found/page": [
       "static/chunks/webpack-eed7f0c5ac197e2e.js",
       "static/chunks/4bd1b696-36af18c28bd6fc64.js",
-      "static/chunks/303-070f8c0625668423.js",
+      "static/chunks/303-1efe75f857af8d47.js",
       "static/chunks/main-app-aa75a8f1c425ad39.js",
       "static/chunks/app/_not-found/page-55e1329d52eed33d.js"
     ],
     "/layout": [
       "static/chunks/webpack-eed7f0c5ac197e2e.js",
       "static/chunks/4bd1b696-36af18c28bd6fc64.js",
-      "static/chunks/303-070f8c0625668423.js",
+      "static/chunks/303-1efe75f857af8d47.js",
       "static/chunks/main-app-aa75a8f1c425ad39.js",
       "static/css/b4cef930cc72a3d2.css",
       "static/chunks/app/layout-896628ba0a7e63a8.js"
@@ -18,7 +18,7 @@
     "/estadisticas/page": [
       "static/chunks/webpack-eed7f0c5ac197e2e.js",
       "static/chunks/4bd1b696-36af18c28bd6fc64.js",
-      "static/chunks/303-070f8c0625668423.js",
+      "static/chunks/303-1efe75f857af8d47.js",
       "static/chunks/main-app-aa75a8f1c425ad39.js",
       "static/chunks/313-64471ae4b04342ca.js",
       "static/chunks/937-34d7f4b2ca8f6a7a.js",
@@ -26,21 +26,10 @@
       "static/chunks/941-febdd2475698cce2.js",
       "static/chunks/app/estadisticas/page-2dff7648ae31e7ca.js"
     ],
-    "/page": [
-      "static/chunks/webpack-eed7f0c5ac197e2e.js",
-      "static/chunks/4bd1b696-36af18c28bd6fc64.js",
-      "static/chunks/303-070f8c0625668423.js",
-      "static/chunks/main-app-aa75a8f1c425ad39.js",
-      "static/chunks/313-64471ae4b04342ca.js",
-      "static/chunks/71-56fc7ada35d3ab15.js",
-      "static/chunks/937-34d7f4b2ca8f6a7a.js",
-      "static/chunks/726-bbc7a1a2b18bb420.js",
-      "static/chunks/app/page-0c54cc44ec48dd49.js"
-    ],
     "/palermo/page": [
       "static/chunks/webpack-eed7f0c5ac197e2e.js",
       "static/chunks/4bd1b696-36af18c28bd6fc64.js",
-      "static/chunks/303-070f8c0625668423.js",
+      "static/chunks/303-1efe75f857af8d47.js",
       "static/chunks/main-app-aa75a8f1c425ad39.js",
       "static/chunks/313-64471ae4b04342ca.js",
       "static/chunks/71-56fc7ada35d3ab15.js",
@@ -49,17 +38,28 @@
     "/predicciones/page": [
       "static/chunks/webpack-eed7f0c5ac197e2e.js",
       "static/chunks/4bd1b696-36af18c28bd6fc64.js",
-      "static/chunks/303-070f8c0625668423.js",
+      "static/chunks/303-1efe75f857af8d47.js",
       "static/chunks/main-app-aa75a8f1c425ad39.js",
       "static/chunks/313-64471ae4b04342ca.js",
       "static/chunks/71-56fc7ada35d3ab15.js",
       "static/chunks/885-e6c2d41086ee4239.js",
       "static/chunks/app/predicciones/page-1490e9ac75e6fff6.js"
     ],
+    "/page": [
+      "static/chunks/webpack-eed7f0c5ac197e2e.js",
+      "static/chunks/4bd1b696-36af18c28bd6fc64.js",
+      "static/chunks/303-1efe75f857af8d47.js",
+      "static/chunks/main-app-aa75a8f1c425ad39.js",
+      "static/chunks/313-64471ae4b04342ca.js",
+      "static/chunks/71-56fc7ada35d3ab15.js",
+      "static/chunks/937-34d7f4b2ca8f6a7a.js",
+      "static/chunks/726-bbc7a1a2b18bb420.js",
+      "static/chunks/app/page-0c54cc44ec48dd49.js"
+    ],
     "/san-isidro/page": [
       "static/chunks/webpack-eed7f0c5ac197e2e.js",
       "static/chunks/4bd1b696-36af18c28bd6fc64.js",
-      "static/chunks/303-070f8c0625668423.js",
+      "static/chunks/303-1efe75f857af8d47.js",
       "static/chunks/main-app-aa75a8f1c425ad39.js",
       "static/chunks/313-64471ae4b04342ca.js",
       "static/chunks/71-56fc7ada35d3ab15.js",
