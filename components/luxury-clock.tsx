@@ -29,11 +29,11 @@ export function LuxuryClock() {
           key={i}
           className="absolute w-1.5 h-1.5 rounded-full bg-white shadow-[0_0_4px_rgba(255,255,255,1)] animate-twinkle"
           style={{
-            left: `${50 + 42 * Math.cos(((i * 30) - 90) * Math.PI / 180)}%`,
-            top: `${50 + 42 * Math.sin(((i * 30) - 90) * Math.PI / 180)}%`,
+            left: `${50 + 45 * Math.cos(((i * 30) - 90) * Math.PI / 180)}%`,
+            top: `${50 + 45 * Math.sin(((i * 30) - 90) * Math.PI / 180)}%`,
             '--twinkle-delay': `${i * 0.2}s`,
             animation: 'twinkle 3s infinite',
-            background: 'linear-gradient(135deg, #fff 20%, #e2e8f0 50%, #fff 80%)',
+            background: 'linear-gradient(135deg, #001f3f 20%, #001a35 50%, #001f3f 80%)',
           } as React.CSSProperties}
         />
       ))}
