@@ -29,14 +29,14 @@ export default function FavoriteHorses() {
     <Tabs defaultValue="palermo" onValueChange={setTrack}>
       <TabsList className="grid w-full grid-cols-2 bg-muted/50">
         <TabsTrigger value="palermo" className="flex items-center gap-2 data-[state=active]:bg-primary/10">
-          <div className="w-5 h-5 relative">
+          <div className="w-6 h-6 relative">
             <Image src="/images/palermo.png" alt="Escudo Palermo" fill className="object-contain" />
           </div>
           <span>Palermo</span>
         </TabsTrigger>
         <TabsTrigger value="sanIsidro" className="flex items-center gap-2 data-[state=active]:bg-primary/10">
-          <div className="w-5 h-5 relative">
-            <Image src="/images/san-isidro.png" alt="Escudo San Isidro" fill className="object-contain" />
+          <div className="w-6 h-6 relative">
+            <Image src="/images/sanisidrohipodromooriginal.png" alt="Escudo San Isidro" fill className="object-contain" />
           </div>
           <span>San Isidro</span>
         </TabsTrigger>

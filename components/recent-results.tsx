@@ -1,8 +1,28 @@
 "use client"
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Tabs, TabsContent, TabsList, TabsTrigger as OriginalTabsTrigger } from "@/components/ui/tabs"
 import { TrophyIcon } from "lucide-react"
 import Image from "next/image"
+import { ComponentProps } from "react"
+
+interface TabsTriggerProps extends ComponentProps<typeof OriginalTabsTrigger> {
+  value: string;
+}
+
+const TabsTrigger = ({ value }: TabsTriggerProps) => (
+  <OriginalTabsTrigger value={value} className="flex items-center gap-2 data-[state=active]:bg-primary/10">
+    <div className="w-6 h-6 relative">
+      <Image
+        src={`/images/${value === 'palermo' ? 'palermo.png' : 'sanisidrohipodromooriginal.png'}`}
+        alt={`Escudo ${value === 'palermo' ? 'Palermo' : 'San Isidro'}`}
+        fill
+        className="object-contain"
+        quality={90}
+      />
+    </div>
+    <span>{value === 'palermo' ? 'Palermo' : 'San Isidro'}</span>
+  </OriginalTabsTrigger>
+)
 
 export default function RecentResults() {
   // Datos de ejemplo
@@ -26,18 +46,8 @@ export default function RecentResults() {
   return (
     <Tabs defaultValue="palermo">
       <TabsList className="grid w-full grid-cols-2 bg-muted/50">
-        <TabsTrigger value="palermo" className="flex items-center gap-2 data-[state=active]:bg-primary/10">
-          <div className="w-5 h-5 relative">
-            <Image src="/images/palermo.png" alt="Escudo Palermo" fill className="object-contain" />
-          </div>
-          <span>Palermo</span>
-        </TabsTrigger>
-        <TabsTrigger value="sanIsidro" className="flex items-center gap-2 data-[state=active]:bg-primary/10">
-          <div className="w-5 h-5 relative">
-            <Image src="/images/san-isidro.png" alt="Escudo San Isidro" fill className="object-contain" />
-          </div>
-          <span>San Isidro</span>
-        </TabsTrigger>
+        <TabsTrigger value="palermo" />
+        <TabsTrigger value="sanIsidro" />
       </TabsList>
       <TabsContent value="palermo" className="mt-4 fade-in">
         <div className="space-y-3">

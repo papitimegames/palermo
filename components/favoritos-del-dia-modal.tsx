@@ -113,9 +113,9 @@ export default function FavoritosDelDiaModal() {
                   <div
                     className={`px-3 py-1.5 text-xs font-medium text-white ${favorito.hipodromo === "Palermo" ? "bg-rose-600" : "bg-emerald-600"} flex items-center gap-2`}
                   >
-                    <div className="w-5 h-5 relative flex-shrink-0">
+                    <div className="w-6 h-6 relative flex-shrink-0">
                       <Image
-                        src={favorito.hipodromo === "Palermo" ? "/images/palermo.png" : "/images/san-isidro.png"}
+                        src={favorito.hipodromo === "Palermo" ? "/images/palermo.png" : "/images/sanisidrohipodromooriginal.png"}
                         alt={`Escudo ${favorito.hipodromo}`}
                         fill
                         className="object-contain"

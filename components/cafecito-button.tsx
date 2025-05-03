@@ -19,7 +19,7 @@ export default function CafecitoButton() {
   return (
     <>
       {/* Audio oculto para reproducir el sonido de agradecimiento */}
-      <audio ref={audioRef} src="/audio/thank-you-168416.mp3" preload="auto" />
+      <audio ref={audioRef} src="/sonidos/thank-you-168416.mp3" preload="auto" />
 
       <Link
         href="https://link.mercadopago.com.ar/papiweb"

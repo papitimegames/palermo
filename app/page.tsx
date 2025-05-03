@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -10,9 +12,16 @@ import PredictionStats from "@/components/prediction-stats"
 import FavoritosDelDiaModal from "@/components/favoritos-del-dia-modal"
 import CafecitoButton from "@/components/cafecito-button"
 import MusicPlayer from "@/components/music-player"
+import { ModelDetailsDialog } from "@/components/model-details-dialog"
+import { RegisterDialog } from "@/components/register-dialog"
 import Image from "next/image"
+import { useState } from "react"
+import { LuxuryClock } from "@/components/luxury-clock"
 
 export default function Home() {
+  const [showModelDetails, setShowModelDetails] = useState(false)
+  const [showRegisterDialog, setShowRegisterDialog] = useState(false)
+
   return (
     <div className="flex min-h-screen flex-col bg-pattern">
       <FavoritosDelDiaModal />
@@ -44,7 +53,7 @@ export default function Home() {
               href="/palermo"
               className="text-sm font-medium text-muted-foreground hover:text-foreground flex items-center gap-1 nav-link"
             >
-              <div className="w-4 h-4 relative">
+              <div className="w-6 h-6 relative">
                 <Image src="/images/palermo.png" alt="Escudo Palermo" fill className="object-contain" />
               </div>
               Palermo
@@ -53,8 +62,8 @@ export default function Home() {
               href="/san-isidro"
               className="text-sm font-medium text-muted-foreground hover:text-foreground flex items-center gap-1 nav-link"
             >
-              <div className="w-4 h-4 relative">
-                <Image src="/images/san-isidro.png" alt="Escudo San Isidro" fill className="object-contain" />
+              <div className="w-6 h-6 relative">
+                <Image src="/images/sanisidrohipodromooriginal.png" alt="Escudo San Isidro" fill className="object-contain" />
               </div>
               San Isidro
             </Link>
@@ -73,10 +82,12 @@ export default function Home() {
           </nav>
           <div className="flex items-center gap-2">
             <CafecitoButton />
-            <Button variant="outline" size="sm" className="focus-visible-ring">
-              Iniciar sesión
-            </Button>
-            <Button size="sm" className="shadow-md hover:shadow-lg transition-shadow focus-visible-ring">
+            <LuxuryClock />
+            <Button 
+              size="sm" 
+              className="shadow-md hover:shadow-lg transition-shadow focus-visible-ring"
+              onClick={() => setShowRegisterDialog(true)}
+            >
               Registrarse
             </Button>
           </div>
@@ -94,7 +105,7 @@ export default function Home() {
                 <Tabs defaultValue="palermo" className="w-[400px]">
                   <TabsList className="bg-muted/50">
                     <TabsTrigger value="palermo" className="flex items-center gap-1 data-[state=active]:bg-primary/10">
-                      <div className="w-4 h-4 relative">
+                      <div className="w-6 h-6 relative">
                         <Image src="/images/palermo.png" alt="Escudo Palermo" fill className="object-contain" />
                       </div>
                       Palermo
@@ -103,8 +114,8 @@ export default function Home() {
                       value="san-isidro"
                       className="flex items-center gap-1 data-[state=active]:bg-primary/10"
                     >
-                      <div className="w-4 h-4 relative">
-                        <Image src="/images/san-isidro.png" alt="Escudo San Isidro" fill className="object-contain" />
+                      <div className="w-6 h-6 relative">
+                        <Image src="/images/sanisidrohipodromooriginal.png" alt="Escudo San Isidro" fill className="object-contain" />
                       </div>
                       San Isidro
                     </TabsTrigger>
@@ -210,7 +221,11 @@ export default function Home() {
                   </li>
                 </ul>
                 <div className="mt-4">
-                  <Button variant="outline" className="w-full scale-on-hover">
+                  <Button 
+                    variant="outline" 
+                    className="w-full scale-on-hover"
+                    onClick={() => setShowModelDetails(true)}
+                  >
                     Ver detalles del modelo
                   </Button>
                 </div>
@@ -259,18 +274,25 @@ export default function Home() {
                     ></div>
                   </div>
                 </div>
-                <div className="mt-4">
-                  <Button variant="outline" className="w-full scale-on-hover">
-                    Ver historial completo
-                  </Button>
-                </div>
               </CardContent>
             </Card>
           </div>
         </section>
 
+        <ModelDetailsDialog
+          open={showModelDetails}
+          onOpenChange={setShowModelDetails}
+        />
+
+        <RegisterDialog
+          open={showRegisterDialog}
+          onOpenChange={setShowRegisterDialog}
+        />
+
         <section className="container py-6">
-          <MusicPlayer className="max-w-2xl mx-auto" />
+          <div className="max-w-2xl mx-auto">
+            <MusicPlayer />
+          </div>
         </section>
       </main>
       <footer className="border-t py-8 bg-gradient-to-b from-transparent to-amber-50/30">

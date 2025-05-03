@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { ThemeProvider } from '@/components/theme-provider'
+import MusicPlayer from '@/components/music-player'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
+  title: 'Hipódromos',
+  description: 'Información y predicciones de carreras de caballos',
   generator: 'v0.dev',
 }
 
@@ -13,8 +15,17 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="es" suppressHydrationWarning>
+      <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          disableTransitionOnChange
+        >
+          {children}
+          <MusicPlayer />
+        </ThemeProvider>
+      </body>
     </html>
   )
 }
