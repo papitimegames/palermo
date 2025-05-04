@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "next dev", 
+    "build": "next build && next export",
+    "deploy": "npm run build && cp -r out/* docs/ && git add docs && git commit -m 'Deploy to GitHub Pages' && git push",
+    "preview": "next build && next start",
+    "export": "next build && next export",
     "start": "next start",
     "lint": "next lint"
   },
